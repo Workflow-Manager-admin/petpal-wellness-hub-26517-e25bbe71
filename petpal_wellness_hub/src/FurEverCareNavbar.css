@@ -111,6 +111,57 @@
   100% { opacity: 1; transform: translateY(0);}
 }
 
+/* Nested vertical dropdown for Account */
+.navbar__dropdown-link--account {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.navbar__dropdown-link--account:focus-within .navbar__nested-dropdown,
+.navbar__dropdown-link--account:hover .navbar__nested-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__nested-dropdown {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: linear-gradient(to bottom, #f8fdff 80%, #edeaff 100%);
+  border-radius: 13px;
+  box-shadow: 0 6px 18px 0 #cee6ed44;
+  margin-top: 2px;
+  min-width: 145px;
+  z-index: 100;
+  padding: 7px 0;
+}
+
+.navbar__nested-dropdown-link {
+  color: #32658a;
+  font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+  font-weight: 600;
+  background: none;
+  text-decoration: none;
+  border: none;
+  min-width: 115px;
+  text-align: left;
+  padding: 9px 22px 9px 32px;
+  border-radius: 11px;
+  margin: 0 4px;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: background 0.14s, color 0.13s, box-shadow 0.17s;
+}
+
+.navbar__nested-dropdown-link:hover, .navbar__nested-dropdown-link:focus-visible {
+  background: linear-gradient(90deg, #b2ebf2 45%, #f3f7fa 100%);
+  color: #234672;
+  box-shadow: 0 1.2px 5px #d3e4f06e;
+}
+
 /* Dropdown sub items */
 .navbar__dropdown-link {
   display: flex;
