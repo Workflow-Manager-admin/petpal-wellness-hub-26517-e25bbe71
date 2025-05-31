@@ -256,7 +256,7 @@
   background: #eaf9f7; border-radius: 13px; border: none;
   color: #4E8D7C; font-weight: 600; font-size: 1em; min-width: 125px;
   padding: 9px 17px; text-align: left; cursor: pointer;
-  display: flex;align-items: center;gap:8px;transition: background .13s,transform .09s;color .14s;
+  display: flex;align-items: center;gap:8px;transition: background .13s,transform .09s, color .14s;
   box-shadow: 0 2px 8px #a7d7c034;
   position: relative;
 }
