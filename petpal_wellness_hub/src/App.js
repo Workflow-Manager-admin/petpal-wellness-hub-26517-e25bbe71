@@ -13,6 +13,10 @@ import ContactUsPage from "./ContactUsPage";
 import HelpPage from "./HelpPage";
 import AboutPrivacyPage from "./AboutPrivacyPage";
 
+// Add imports for LoginPage and SignupPage (to be implemented)
+import LoginPage from "./LoginPage";
+import SignupPage from "./SignupPage";
+
 // PUBLIC_INTERFACE
 // Wrapper to access pet id for DietNutritionPage via useParams
 function DietNutritionPageWithParams() {
@@ -53,6 +57,10 @@ function App() {
             <Route path="/settings/support/help" element={<HelpPage />} />
             {/* Settings > About & Privacy */}
             <Route path="/settings/about-privacy" element={<AboutPrivacyPage />} />
+
+            {/* Auth: Login and Signup */}
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
           </Routes>
         </main>
       </div>
