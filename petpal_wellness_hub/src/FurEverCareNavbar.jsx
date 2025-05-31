@@ -21,7 +21,8 @@ function useFontAwesomeCDN() {
 // PUBLIC_INTERFACE
 function FurEverCareNavbar() {
   /**
-   * FurEverCare Navbar with nested/accessible dropdown for Account (Login/Signup).
+   * FurEverCare Navbar with nested/accessible dropdown for Account (Login/Signup)
+   * and Support (Contact/Help).
    * - Gradient/glassmorphism background
    * - Brand pop/glow, correct font
    * - Icons for key links using FontAwesome
@@ -213,23 +214,49 @@ function FurEverCareNavbar() {
                   </li>
                 </ul>
               </li>
-              <li role="none">
-                <a className="furt-dropdown-link" href="#" role="menuitem" tabIndex={-1}>
+              <li role="none" className="furt-dropdown-submenu-parent">
+                <button
+                  className="furt-dropdown-link furt-dropdown-toggle"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="support-dropdown"
+                  type="button"
+                  tabIndex={-1}
+                >
                   <span className="furt-icon"><i className="fa-solid fa-headset"></i></span>
                   Support
-                </a>
-              </li>
-              <li role="none">
-                <a className="furt-dropdown-link" href="#" role="menuitem" tabIndex={-1}>
-                  <span className="furt-icon"><i className="fa-solid fa-envelope"></i></span>
-                  Contact
-                </a>
-              </li>
-              <li role="none">
-                <a className="furt-dropdown-link" href="#" role="menuitem" tabIndex={-1}>
-                  <span className="furt-icon"><i className="fa-solid fa-circle-question"></i></span>
-                  Help
-                </a>
+                  <span className="furt-dropdown-arrow" aria-hidden="true">▼</span>
+                </button>
+                <ul
+                  className="furt-dropdown furt-dropdown-nested"
+                  id="support-dropdown"
+                  role="menu"
+                  aria-label="Support Submenu"
+                  aria-labelledby="support-dropdown"
+                >
+                  <li role="none">
+                    <Link 
+                      className="furt-dropdown-link" 
+                      to="/settings/support/contact" 
+                      role="menuitem" 
+                      tabIndex={-1}
+                    >
+                      <span className="furt-icon"><i className="fa-solid fa-envelope"></i></span>
+                      Contact
+                    </Link>
+                  </li>
+                  <li role="none">
+                    <Link 
+                      className="furt-dropdown-link" 
+                      to="/settings/support/help" 
+                      role="menuitem" 
+                      tabIndex={-1}
+                    >
+                      <span className="furt-icon"><i className="fa-solid fa-circle-question"></i></span>
+                      Help
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li role="none">
                 <a className="furt-dropdown-link" href="#" role="menuitem" tabIndex={-1}>
