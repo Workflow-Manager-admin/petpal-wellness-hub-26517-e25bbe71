@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+/* --- Main Page --- */
+.dnp-page {
+  --teal: #4E8D7C;
+  --gold: #F7C873;
+  --coral: #F26B6B;
+  --purple: #9FA8DA;
+  --bg1: #F4FAFB;
+  --bg2: #F8F9FC;
+  --white: #fff;
+  --card-bg: #FEFCFA;
+  --border: #e7ecec;
+  --dnp-grad: linear-gradient(90deg, #A7D7C5 10%, #9FA8DA 100%);
+  min-height: 100vh;
+  background: linear-gradient(115deg, #f7fafc 59%, #fbedee 100%);
+  font-family: "Inter", "Poppins", Arial, Helvetica, sans-serif;
+  color: #244242;
+  padding-bottom: 65px;
+}
+
+/* --- Header --- */
+.dnp-header {
+  background: var(--card-bg);
+  margin: 0 auto;
+  border-radius: 0 0 22px 22px;
+  box-shadow: 0 2.5px 21px #acc8e818;
+  padding: 2.6rem 0 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1050px;
+  margin-bottom: 24px;
+  animation: fadeInPage .9s;
+}
+@keyframes fadeInPage { from{opacity:0;transform: translateY(27px);} to{opacity:1;transform:none;} }
+
+.dnp-header-title {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: .012em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--teal);
+}
+.dnp-header-title i { font-size: 1.8rem; color: var(--coral);}
+.dnp-header-desc {
+  color: #6c8684;
+  font-size: 1.12rem;
+  font-weight: 400;
+  margin-top: 7px;
+  text-align: center;
+  line-height: 1.4;
+  max-width: 470px;
+}
+
+/* --- Main Layout Grid --- */
+.dnp-main-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 39px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.dnp-main-stack { display: flex; flex-direction: column; gap: 34px;}
+.dnp-side-stack { display: flex; flex-direction: column; gap: 28px;}
+
+/* --- Cards --- */
+.dnp-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 2.5px 18px #a7d7c025, 0 1.5px 3.5px #4e8d7c13;
+  padding: 28px 30px 18px 30px;
+  margin-bottom: 4px;
+  min-width: 0;
+  transition: box-shadow .14s, transform .13s;
+  animation: fadeInSec .5s;
+}
+@keyframes fadeInSec {from{opacity:0;transform: translateY(18px);}to{opacity:1;transform: none;}}
+
+.dnp-card-title {
+  font-family: 'Poppins',Arial,sans-serif;
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dnp-card-title i { color: var(--gold); font-size: 1.25em;}
+.dnp-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.dnp-card:focus-within, .dnp-card:hover {
+  outline: 2.2px solid #F7C873;
+  box-shadow: 0 7px 22px #ffd49a38;
+  transform: scale(1.012);
+}
+
+/* --- Meal Table --- */
+.dnp-meal-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: none;
+}
+.dnp-meal-table th, .dnp-meal-table td {
+  padding: 7px 9px;
+  font-size: 1.01em;
+}
+.dnp-meal-table th {
+  color: #5b826e;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+}
+.dnp-meal-table td {
+  border-bottom: 1px solid #f3f6f6;
+}
+.dnp-meal-type {
+  color: var(--teal);
+  font-family: 'Poppins',Arial,sans-serif;
+  font-weight: 600;
+  display: flex; gap:6px; align-items: center;
+}
+.dnp-meal-type i {color: var(--coral);}
+.dnp-meal-food { display: block; font-size: .97em; color: #6d7c6c;}
+.dnp-meal-kcal { color: var(--gold);}
+.dnp-meal-total {font-weight: 600; background: #fcf4e4; color: var(--teal);}
+.dnp-meal-totalval { background: #fcf4e4; font-weight: bold; color: var(--coral);}
+.dnp-meal-table tr:last-child td { border-bottom: none;}
+
+/* --- Nutrition Chart --- */
+.nutrition-dashboard { text-align: left;}
+.dnp-nutrition-stats {display: flex; align-items: center; gap: 0 23px;}
+.dnp-nutrition-chart { display: flex; align-items: center; justify-content: center; }
+.dnp-piechart { margin-right: 18px;}
+.dnp-nutrition-legends {
+  list-style: none;
+  margin: 0 0 0 0;
+  padding: 0;
+  font-size: 1em;
+  color: #4a6262;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.nutri.swatch {display:inline-block; width:17px;height:13px;vertical-align:middle; 
+  border-radius: 5px; margin-right: 8px; border: 1.5px solid #fff;}
+.nutri.swatch.protein { background: #4E8D7C;}
+.nutri.swatch.fat {background: #F7C873;}
+.nutri.swatch.carbs {background: #F26B6B;}
+.nutri.swatch.fiber {background: #9FA8DA;}
+.nutri-ideal {margin-left:6px; font-size:.97em;color:#acb2b9; }
+.dnp-nutrition-footnote { margin-top: 9px; font-size: .98em; color: #b97c52;}
+/* Chart center % */
+.dnp-piechart text { font-family: 'Poppins',Arial,sans-serif; }
+
+/* --- Notes (Diary) --- */
+.dnp-notes-card { background: var(--bg2);}
+.dnp-notes-form {display:flex; gap: 9px; margin-bottom: 13px;}
+.dnp-note-input {
+  flex:1; padding:7px 11px; border-radius:7px; border:1.7px solid #bcebdd;
+  background:#f4fcfa; font-size:1.05em; outline:none; 
+  transition: border-color .15s, box-shadow .13s;
+}
+.dnp-note-input:focus { border-color:var(--coral); box-shadow: 0 2px 8px #f26b6b29;}
+.dnp-btn {
+  background: var(--teal); color: #fff; border: none;
+  border-radius: 8px; font-size: 1.12em; padding:7px 17px;
+  font-family: inherit; font-weight: 700; cursor: pointer;
+  transition: background .14s, transform .1s;
+  display: flex; align-items: center; gap: 6px;
+}
+.dnp-btn:hover,.dnp-btn:focus {background: var(--coral);}
+.dnp-notes-list {
+  margin:0; padding:0; list-style:none;
+  display: flex; flex-direction: column; gap: 10px;
+  max-height:145px; overflow-y: auto;
+}
+.dnp-note-item {
+  background:#e0f3e4; border-radius:10px;
+  padding:7px 13px 6px 13px; color:#325144;
+  font-size:1.01em; display:flex; gap:21px; align-items:flex-start;
+  animation: fadeIn 0.37s;
+}
+.dnp-note-date {font-size:.99em;color:var(--gold);min-width:88px;opacity:.85;}
+.dnp-note-content{flex:1;}
+@keyframes fadeIn {from {opacity:0;transform: translateY(10px);} to {opacity:1;transform: none;}}
+
+/* --- Weekly Calendar Table --- */
+.dnp-calendar-table {
+  width:100%;
+  border-collapse:collapse;
+  background:none;
+  font-size: 1.04em;
+}
+.dnp-calendar-table th,.dnp-calendar-table td {
+  padding:5.5px 7px;
+  font-family:inherit;
+}
+.dnp-calendar-table th {
+  background: #faf9f4;
+  color: #547a6e;
+  font-weight: 600;
+  border-bottom:1.7px solid #e9f2ed;
+}
+.dnp-calendar-table td {
+  border-bottom:1px solid #f3f6f6;
+  text-align: center;
+}
+.dnp-calendar-table tr:last-child td { border-bottom:none; }
+.dnp-meal-dot.yes { color: var(--teal);}
+.dnp-meal-dot.no { color: #b0b0b0;}
+.dnp-meal-dot { font-size:1.23em; display:inline-flex; align-items:center; justify-content:center;}
+
+/* --- Tabs: Foods --- */
+.dnp-tabs-row {
+  display:flex; gap:11px; margin-bottom:12px; margin-top:3px;
+}
+.dnp-tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2.2px solid #d1edeaac;
+  font-family: inherit;
+  color: #3c8881;
+  font-weight: 600;
+  font-size: 1.03rem;
+  padding: 7px 21px 7px 13px;
+  border-radius: 11px 11px 0 0;
+  cursor: pointer;
+  transition: color .18s, background .15s, border-color .18s;
+}
+.dnp-tab-btn.active,
+.dnp-tab-btn:hover,
+.dnp-tab-btn:focus {
+  color: var(--coral);
+  border-bottom-color: var(--coral);
+  background: #f5f7fc;
+}
+.dnp-foods-list {
+  list-style:none;
+  margin:0;padding:0;
+  display:flex; flex-direction:column;
+  gap:7px;
+}
+.dnp-food-item {
+  font-size: 1.055em;
+  color: #3b7c59;
+  background: #f5fff7;
+  border-radius:12px;
+  padding:6px 12px;
+  font-weight: 600;
+  display: flex; align-items: center; gap: 11px;
+  transition: background .13s, color .13s;
+}
+.dnp-food-item i { color: var(--gold);}
+.dnp-foods-list .dnp-food-item+.dnp-food-item {margin-top:2px;}
+.foods-list-card { background: var(--bg2);}
+
+/* --- Water Intake Tracker --- */
+.water-card { background:var(--bg1);}
+.dnp-water-row {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top: 3px;
+}
+.dnp-water-drop {
+  background:#dbe7f4;
+  color: #4E8D7C;
+  font-size:1.19em;
+  border: none;
+  border-radius: 50%;
+  width: 29px;
+  height: 29px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow:0 0.5px 7px #a7d7c033;
+  transition: background .14s, color .15s, box-shadow .13s;
+  margin-right:2px;
+  cursor:pointer;
+  outline:none;
+}
+.dnp-water-drop.full {
+  background: var(--gold);
+  color: #fff;
+  box-shadow: 0 3px 11px #f7c8731d;
+}
+.dnp-water-drop:focus,.dnp-water-drop:hover{ box-shadow:0 2px 17px #a7d7c133;}
+.dnp-water-label { margin-left:11px; color:var(--teal); font-weight:600; font-size:1.01em;}
+
+/* --- Attachments Uploads --- */
+.uploads-card { background: var(--bg1);}
+.dnp-upload-btn {
+  margin-left: auto;
+  background: var(--dnp-grad);
+  color: #fff;
+  border:none;
+  border-radius:9px;
+  font-size:1.1em;
+  font-weight:600;
+  padding:4.5px 17px;
+  box-shadow:0 1.5px 8px #5fd7ea18;
+  display: flex; align-items: center;
+  cursor: pointer;
+}
+.dnp-upload-btn:hover, .dnp-upload-btn:focus {background: var(--coral);}
+.dnp-upload-btn input {display:none;}
+.dnp-files-list {
+  display:flex; flex-wrap:wrap;
+  gap:12px 21px; margin-top: 14px;
+}
+.dnp-file-preview {
+  background: #fff;
+  border-radius:13px;
+  box-shadow:0 2px 13px #a7d7c044;
+  padding:9px 10px 7px 10px;
+  min-width:78px; max-width:122px;
+  display:flex; flex-direction:column;
+  align-items:center; gap:5px;
+  font-size:1em;
+}
+.dnp-file-img { background:#e0f3e4;}
+.dnp-file-doc { background:#fbe5eb; color: #b94c6f;}
+.dnp-file-preview img {
+  width:52px; height:46px;
+  object-fit:cover; border-radius:7px;
+  margin-bottom:1.5px; box-shadow:0 1.5px 5px #cdebe387;
+}
+.dnp-file-preview i {font-size:1.45em; color: #527168;}
+.dnp-file-meta {
+  font-size:.99em; text-align:center; color: #334236;
+  width:100%;
+}
+.dnp-file-date {
+  display: block; color: #7bafa1;
+  font-size: .89em; opacity:0.80; margin-top:1px;
+}
+
+/* --- Accessibility focus --- */
+.dnp-card:focus-within,.dnp-btn:focus-visible,.dnp-tab-btn:focus-visible,.dnp-water-drop:focus-visible,.dnp-upload-btn:focus-visible {
+  outline: 2.3px solid #F7C873;
+  outline-offset: 1.6px;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1100px) {
+  .dnp-main-grid {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    max-width: 97vw;
+    padding: 0 7vw;
+  }
+  .dnp-main-stack, .dnp-side-stack { flex-direction: column;}
+}
+@media (max-width: 700px) {
+  .dnp-header {
+    padding: 1.1rem 0 0.7rem 0;
+    max-width: 98vw;
+  }
+  .dnp-header-title { font-size: 1.23rem; gap: 8px;}
+  .dnp-card { padding: 7vw 4vw 9vw 4vw;}
+}
+@media (max-width: 550px) {
+  .dnp-header { padding: 10px 0 0 0;}
+  .dnp-card { padding: 5vw 1vw 8vw 2vw;}
+  .dnp-main-grid { padding: 0 2vw;}
+}
+
+@media (max-width: 410px) {
+  .dnp-header-title { font-size: 1rem;}
+  .dnp-card-title { font-size: 1em;}
+  .dnp-meal-table td, .dnp-calendar-table td {font-size:.95em;}
+}
+
+/* FontAwesome icons if CDN direct mount */
+@media all {
+  [class^="fa-"], [class*=" fa-"] {
+    font-family: 'FontAwesome', Arial, sans-serif;
+    font-style: normal; font-weight: normal;
+    text-decoration: inherit;
+    display: inline-block;
+  }
+}
