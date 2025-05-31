@@ -295,7 +295,8 @@ function FurEverCareLanding() {
             <div className="fec-footer-tagline">Pet Wellness, Reimagined.</div>
           </div>
           <nav className="fec-footer-nav" aria-label="Footer Navigation">
-            <a href="#" className="fec-footer-link">Home</a>
+            {/* Use react-router Link for Home so SPA navigation works correctly */}
+            <Link to="/" className="fec-footer-link">Home</Link>
             <a href="#features" className="fec-footer-link">Features</a>
             <a href="#" className="fec-footer-link">Support</a>
             <a href="#" className="fec-footer-link">Terms & Privacy</a>
