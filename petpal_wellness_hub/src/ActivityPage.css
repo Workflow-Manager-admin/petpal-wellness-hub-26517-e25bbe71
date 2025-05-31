@@ -304,3 +304,8 @@ section {
   .milestone, .goal-label { font-size: 0.95em;}
   .bar-label {font-size: 0.85em;}
 }
+
+/* Style for activity log topic/header only */
+.activity-log-title {
+  color: #28a745;
+}
