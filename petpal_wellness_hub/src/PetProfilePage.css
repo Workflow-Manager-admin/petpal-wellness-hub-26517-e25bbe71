@@ -1,0 +1,645 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+.pet-profile-page {
+  --teal: #4E8D7C;
+  --sky: #9FA8DA;
+  --coral: #F26B6B;
+  --soft-bg1: #F4FAFB;
+  --soft-bg2: #F8F9FC;
+  --cards-bg: #FEFCFA;
+  --shadow-card: 0 4px 24px 0 rgba(88, 132, 186, 0.11), 0 1.5px 7px #90d7c035;
+  --shadow-file: 0 1.5px 7px #a7d7c066;
+  --radius: 22px;
+  --accent-grad: linear-gradient(91deg, #A7D7C5 13%, #9FA8DA 92%);
+  --fade-scrap: linear-gradient(101deg, #f1f7f8 61%, #dbeafe 100%);
+  background: var(--fade-scrap);
+  min-height: 100vh;
+  font-family: 'Inter', 'Poppins', Arial, Helvetica, sans-serif;
+  color: #243c35;
+  padding-bottom: 80px;
+}
+.pet-header {
+  padding: 42px 0 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  align-items: center;
+  justify-content: flex-start;
+  background: var(--cards-bg);
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: 0 4px 26px #a7d7c519;
+  margin-bottom: 29px;
+}
+.pet-photo-section {
+  flex: 0 0 146px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.pet-photo-container {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-card);
+  background: var(--soft-bg1);
+  overflow: visible;
+  margin: 0 0 0 18px;
+}
+.pet-photo {
+  border-radius: 50%;
+  width: 132px;
+  height: 132px;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 0 12px 0 #a7d7c524;
+  transition: box-shadow .15s;
+}
+.pet-photo-container:hover .pet-photo {
+  box-shadow: 0 0 24px #9fa8da55;
+}
+.pet-photo-edit-btn {
+  background: var(--accent-grad);
+  border: none;
+  border-radius: 50%;
+  color: var(--coral);
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  bottom: 0;
+  right: -7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1.5px 7px #e9a4ad59;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: background .19s, transform .12s;
+}
+.pet-photo-edit-btn:hover, .pet-photo-edit-btn:focus {
+  background: var(--coral);
+  color: #fff;
+  transform: scale(1.09);
+}
+.pet-photo-edit-btn input {
+  display: none;
+}
+.pet-title-section {
+  flex: 1 1 320px;
+  min-width: 210px;
+}
+.pet-name {
+  font-size: 2.4rem;
+  margin: 0 0 11px 0;
+  font-family: 'Poppins', 'Inter', Arial, sans-serif;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 0.012em;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.info-edit-btn {
+  background: none;
+  border: none;
+  color: var(--sky);
+  margin-left: 8px;
+  font-size: 1.34em;
+  cursor: pointer;
+  transition: color .15s;
+  padding: 3px 7px;
+  border-radius: 7px;
+}
+.info-edit-btn:hover, .info-edit-btn:focus { color: var(--coral); background: #e6e6ff44;}
+.pet-species {
+  display: flex;
+  gap: 20px;
+  font-size: 1.16rem;
+  color: #527168;
+  font-family: 'Inter', 'Poppins', Arial, sans-serif;
+  letter-spacing: .01em;
+  margin-bottom: 4px;
+}
+.pet-species i { margin-right: 5px; color: var(--teal);}
+.editable-input {
+  font-family: inherit;
+  font-size: 1.03em;
+  border-radius: 6px;
+  border: 2px solid #b2e1d6;
+  background: #f6fffc;
+  box-shadow: 0 1px 5px #a7d7c020;
+  padding: 2.5px 7px;
+  margin-right: 2.5px;
+}
+
+/************ MAIN CARDS LAYOUT *************/
+.profile-main-wrapper {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+/* Info Card (2-column) */
+.pet-info-card {
+  grid-column: 1/2;
+  background: var(--cards-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 20px 32px;
+  margin-bottom: 29px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.info-card-row {
+  display: flex;
+  gap: 44px;
+  margin-bottom: 0.4em;
+  justify-content: flex-start;
+}
+.info-icon-col {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 1.14em;
+  color: #366f64;
+  font-weight: 500;
+}
+.info-icon-col i { color: var(--teal); }
+
+/* Owner/Contact collapsible/tabbed */
+.pet-owner-section {
+  grid-column: 2/3;
+  background: var(--soft-bg2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 17px 27px 23px 24px;
+  margin-bottom: 28px;
+  min-width: 220px;
+  animation: tabSlideIn 0.65s cubic-bezier(.32, 1.1, .26, 0.95);
+}
+@keyframes tabSlideIn { from { opacity: 0; transform: translateY(25px);} to {opacity:1;transform: none;}}
+.owner-header-row {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+  margin-bottom: 12px;
+}
+.owner-tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2.2px solid #d1edeaac;
+  font-family: inherit;
+  color: #3c8881;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 6.5px 17px 7px 13px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  transition: color .17s, background .17s;
+}
+.owner-tab-btn.active,
+.owner-tab-btn:hover,
+.owner-tab-btn:focus {
+  color: var(--coral);
+  border-bottom-color: var(--coral);
+  background: #f9f7ff;
+}
+.owner-collapse-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.28em;
+  padding: 3px 13px;
+  border-radius: 9px;
+  transition: background .19s,color .17s;
+  cursor: pointer;
+}
+.owner-collapse-btn:hover,
+.owner-collapse-btn:focus {
+  background: #e0f3f9;
+  color: var(--coral);
+}
+.owner-details-panel.expanded {
+  max-height: 170px;
+  padding-bottom: 7px;
+  opacity: 1;
+}
+.owner-details-panel.collapsed {
+  max-height: 0 !important;
+  opacity: 0;
+  padding: 0;
+  pointer-events: none;
+}
+.owner-info-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.03em;
+  color: #1b4f48;
+  padding-left: 4px;
+}
+.owner-info-fields i { color: var(--sky); margin-right: 8px; }
+
+/*** Medical Overview ***/
+.pet-medical-box {
+  grid-column: 1/2;
+  background: var(--soft-bg1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 20px 25px 15px 28px;
+  margin-bottom: 29px;
+  min-width: 220px;
+}
+.pet-medical-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 1.13em;
+  color: var(--teal);
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.btn-health-history {
+  margin-left: auto;
+  background: var(--sky);
+  color: #fff;
+  border: none;
+  border-radius: 13px;
+  font-size: 0.97em;
+  font-weight: 500;
+  padding: 4.2px 13px 4px 13px;
+  box-shadow: 0 1.5px 7px #d2e8ff53;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  transition: background-color .16s, color .16s;
+}
+.btn-health-history span { display:inline;} /* Desktop: visible, mobile: visible but might wrap */
+.btn-health-history:hover, .btn-health-history:focus {
+  background: var(--coral);
+  color: #fff;
+}
+.pet-medical-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 1.04em;
+  padding-left: 4px;
+}
+.pet-tag {
+  display: inline-block;
+  border-radius: 9px;
+  background: #e0f3e4;
+  font-size: 1em;
+  color: #3b6e5c;
+  font-weight: 500;
+  padding: 5px 12px 5px 9px;
+  margin-bottom: 4px;
+  margin-right: 6px;
+  box-shadow: 0 1px 3px #c0e2df25;
+  vertical-align: middle;
+  transition: background .17s;
+  letter-spacing: 0.01em;
+}
+.pet-tag.allergy { background: #fbe5eb; color: #d15f7c;}
+.pet-tag.chronic { background: #dfdef8; color: #5650ad;}
+.pet-tag.status { background: #f0f8ea; color: #2d6b2e;}
+.pet-tag.recent-visit { background: #e2f0f9; color: #3779a4;}
+
+/*** Vaccination panel w/ accent/scrapbook timeline  ***/
+.pet-vax-panel {
+  grid-column: 2/3;
+  background: var(--cards-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 18px 24px;
+  min-width: 210px;
+  margin-bottom: 28px;
+}
+.pet-vax-header {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 1.08em;
+  gap: 11px;
+  margin-bottom: 12px;
+}
+.btn-add-vax {
+  margin-left: auto;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 4.7px 13px;
+  font-size: .99em;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1.5px 7px #95e5e385;
+  transition: background .14s;
+}
+.btn-add-vax:hover, .btn-add-vax:focus {background: var(--coral);}
+.pet-vax-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 8.7px;
+}
+.vax-item {
+  background: linear-gradient(93deg, #fbedee 60%, #e9f2fb 100%);
+  border-radius: 13px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 8px 12px 7px 16px;
+  transition: transform .18s, box-shadow .15s;
+  font-size: 1.03em;
+  position: relative;
+}
+.vax-item .vax-label {
+  min-width: 78px;
+  font-family: 'Poppins',Arial,sans-serif;
+  color: #2c485e;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.vax-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 7px;
+  background: #f5cbc9;
+  border: 2px solid #fbe5eb;
+}
+.vax-item.status-complete .vax-dot { background: #4E8D7C; border-color: #d6f9e1;}
+.vax-item.status-due-soon .vax-dot { background: #F7C873; border-color: #faeed7;}
+.vax-item.status-overdue .vax-dot { background: #F26B6B; border-color: #fbe5eb;}
+.vax-status-text {
+  font-weight: 600;
+  font-size: 1em;
+  color: #fff;
+  padding: 3px 11px 3px 7px;
+  border-radius: 7px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.status-complete .vax-status-text { background: linear-gradient(84deg,#65ae96 60%,#A7D7C5 100%);}
+.status-due-soon .vax-status-text { background: linear-gradient(90deg, #F7C873 60%, #dbeafe 100%); color: #754524;}
+.status-overdue .vax-status-text { background: linear-gradient(86deg,#F26B6B 81%,#ffe8e0 100%); color: #fff;}
+.vax-date { font-size: .98em; color: #6497bd; min-width: 89px;}
+.vax-missing { color: #cc8686; font-size: 0.92em;}
+
+.vax-item:focus-within, .vax-item:hover { transform: scale(1.04); box-shadow:0 6px 18px #f26b6b21, var(--shadow-card);}
+
+/*** Notes/Diary ***/
+.pet-notes-section {
+  grid-column: 1/2;
+  background: var(--cards-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 22px 28px 17px 28px;
+  margin-bottom: 29px;
+  min-width: 220px;
+  position: relative;
+}
+.notes-header {
+  color: var(--teal);
+  font-size: 1.13em;
+  font-weight: 600;
+  font-family: 'Poppins', Arial, sans-serif;
+  margin-bottom: 8px;
+}
+.notes-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.notes-input {
+  flex: 1 1 auto;
+  padding: 6.5px 11px;
+  border-radius: 7px;
+  border: 1.7px solid #bcebdd;
+  font-size: 1.03em;
+  font-family: inherit;
+  outline: none;
+  background: #f4fcfa;
+  transition: border-color .16s, box-shadow .15s;
+}
+.notes-input:focus { border-color: var(--coral); box-shadow: 0 2px 8px #f26b6b24;}
+.btn-add-note {
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 1.08em;
+  font-weight: 700;
+  padding: 7.5px 13px 7px 13px;
+  transition: background .15s, transform .12s;
+  cursor: pointer;
+}
+.btn-add-note:hover, .btn-add-note:focus {
+  background: var(--coral);
+  transform: scale(1.08);
+}
+.notes-list {
+  margin: 0;
+  padding: 0 0 0 1px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 195px;
+  overflow-y: auto;
+}
+.note-item {
+  background: #e0f3e4;
+  border-radius: 10px;
+  padding: 9px 14px 7px 14px;
+  color: #325144;
+  font-size: 1.02em;
+  font-family: 'Inter',Arial,sans-serif;
+  box-shadow: 0 1px 4px #c0e2df1a;
+  display: flex;
+  gap: 19px;
+  align-items: flex-start;
+  animation: fadeIn .47s;
+}
+.note-time {
+  font-size: .99em;
+  color: var(--sky);
+  margin-right: 13px;
+  font-family: 'Poppins',Arial,sans-serif;
+  min-width: 88px;
+  opacity: 0.88;
+}
+.note-text { flex: 1; }
+
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(14px);}
+  to { opacity:1; transform: none;}
+}
+
+/*** Attachments/Files ***/
+.pet-files-section {
+  grid-column: 2/3;
+  background: var(--soft-bg2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-file), var(--shadow-card);
+  padding: 23px 22px 17px 23px;
+  margin-bottom: 16px;
+  min-width: 210px;
+  position: relative;
+}
+.files-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--teal);
+  font-size: 1.09em;
+  font-weight: 600;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+.files-upload-btn {
+  margin-left: auto;
+  background: var(--accent-grad);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 1.08em;
+  font-weight: 500;
+  padding: 3px 13px;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+  box-shadow: 0 1.5px 6px #cfeaee66;
+  display: flex;
+  align-items: center;
+}
+.files-upload-btn:hover,
+.files-upload-btn:focus { background: var(--coral); color: #fff;}
+.files-upload-btn input { display:none; }
+.files-list {
+  display: flex;
+  gap: 17px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.file-preview {
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 2.5px 13px #a7d7c028;
+  padding: 8px 10px 6px 10px;
+  min-width: 88px;
+  max-width: 132px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  transition: box-shadow .16s, transform .13s;
+  font-size: 0.98em;
+}
+.file-preview.doc-file {
+  background: #fbe5eb;
+  color: #b94c6f;
+  justify-content: center;
+}
+.file-preview.image-file {
+  background: #e0f3e4;
+  color: #25794d;
+}
+.file-preview img {
+  width: 64px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 7px;
+  margin-bottom: 2px;
+  box-shadow: 0 1.5px 6px #cdebe387;
+}
+.file-preview i {
+  font-size: 2.15em;
+  margin-bottom: 2px;
+  color: #527168;
+}
+.file-meta {
+  font-size: .99em;
+  padding-top: 2px;
+  text-align: center;
+  color: #30463d;
+}
+.file-date {
+  display: block;
+  color: #7bafa1;
+  font-size: .89em;
+  opacity: 0.83;
+  margin-top: 2px;
+}
+
+/* Section Separators / Digital scrapbook vibe */
+.pet-profile-page section {
+  margin-bottom: 11px;
+  border-top: 3px dashed #f5e0f9;
+  box-shadow: 0 0.5px 6px #f7c87322;
+}
+.pet-profile-page section:first-of-type {
+  border-top: none;
+}
+
+/********* Responsive Design for mobile/tablet **********/
+@media (max-width: 1000px) {
+  .profile-main-wrapper {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    max-width: 98vw;
+    padding: 0 12px;
+  }
+  .pet-info-card,
+  .pet-medical-box,
+  .pet-notes-section,
+  .pet-vax-panel,
+  .pet-owner-section,
+  .pet-files-section {
+    min-width: 0;
+    width: 100%;
+  }
+  .pet-photo-section {
+    margin: 0 auto 0 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .pet-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0 8px 0;
+    gap: 17px;
+  }
+  .pet-name { font-size: 1.6rem; gap: 8px;}
+  .profile-main-wrapper {
+    padding: 0 2vw;
+    margin-top: 0;
+    gap: 14px;
+  }
+  .pet-info-card, .pet-medical-box, .pet-notes-section,
+  .pet-vax-panel, .pet-owner-section, .pet-files-section {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .pet-header { padding: 9px 0 7px 0;}
+  .info-card-row, .pet-medical-row { flex-direction: column;}
+  .pet-photo { width: 89px; height: 89px;}
+  .pet-photo-container { width: 92px; height: 92px;}
+}
