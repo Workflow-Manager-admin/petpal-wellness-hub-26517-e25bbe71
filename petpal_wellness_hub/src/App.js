@@ -39,6 +39,8 @@ function App() {
             <Route path="/pet/:id/health" element={<HealthTrackerPage />} />
             {/* Diet & Nutrition Page: dynamic route for pet id */}
             <Route path="/pet/:id/diet" element={<DietNutritionPageWithParams />} />
+            {/* Activity Tracker Page: dynamic route for pet id */}
+            <Route path="/pet/:id/activity" element={<ActivityPageWithParams />} />
           </Routes>
         </main>
       </div>

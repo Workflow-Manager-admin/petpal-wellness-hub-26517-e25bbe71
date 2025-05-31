@@ -126,12 +126,12 @@ function FurEverCareNavbar() {
                 </Link>
               </li>
               <li role="none">
-                <a className="furt-dropdown-link" href="#" role="menuitem" tabIndex={-1}>
+                <Link className="furt-dropdown-link" to="/pet/1/activity" role="menuitem" tabIndex={-1}>
                   <span className="furt-icon">
                     <i className="fa-regular fa-futbol"></i>
                   </span>
                   Activity
-                </a>
+                </Link>
               </li>
             </ul>
           </li>
