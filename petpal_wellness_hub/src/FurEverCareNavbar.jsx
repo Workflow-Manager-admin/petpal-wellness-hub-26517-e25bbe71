@@ -148,10 +148,15 @@ function FurEverCareNavbar() {
             </button>
             <ul className="furt-dropdown" role="menu" aria-label="Appointments Submenu">
               <li role="none">
-                <a className="furt-dropdown-link" href="#" role="menuitem" tabIndex={-1}>
+                <Link
+                  className="furt-dropdown-link"
+                  to="/appointments/manage"
+                  role="menuitem"
+                  tabIndex={-1}
+                >
                   <i className="fa-solid fa-clipboard-list furt-icon"></i>
                   Manage
-                </a>
+                </Link>
               </li>
             </ul>
           </li>

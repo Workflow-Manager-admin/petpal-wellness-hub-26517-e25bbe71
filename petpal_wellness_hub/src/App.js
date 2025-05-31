@@ -42,6 +42,8 @@ function App() {
             <Route path="/pet/:id/diet" element={<DietNutritionPageWithParams />} />
             {/* Activity Tracker Page: dynamic route for pet id */}
             <Route path="/pet/:id/activity" element={<ActivityPageWithParams />} />
+            {/* Appointment Manage Page */}
+            <Route path="/appointments/manage" element={<AppointmentManagePage />} />
           </Routes>
         </main>
       </div>
