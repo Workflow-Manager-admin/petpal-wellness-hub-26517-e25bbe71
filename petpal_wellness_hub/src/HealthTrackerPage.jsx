@@ -123,6 +123,18 @@ function getStatusColor(status) {
   }
 }
 
+// FontAwesome CDN for icons if not already present (robust for direct page mount)
+(function ensureFA() {
+  if (!document.getElementById("fa-cdn")) {
+    const fa = document.createElement("link");
+    fa.id = "fa-cdn";
+    fa.rel = "stylesheet";
+    fa.href =
+      "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css";
+    document.head.appendChild(fa);
+  }
+})();
+
 // PUBLIC_INTERFACE
 function HealthTrackerPage() {
   // Local state for uploads (demo, not persistent)
