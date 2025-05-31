@@ -1,24 +1,23 @@
 import React from 'react';
 import './App.css';
 import FurEverCareNavbar from './FurEverCareNavbar';
+import FurEverCareLanding from './FurEverCareLanding';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+// PUBLIC_INTERFACE
 function App() {
   return (
-    <div className="app">
-      <FurEverCareNavbar />
-      <main>
-        <div className="container" style={{ paddingTop: 96 }}>
-          <div className="hero">
-            <div className="subtitle">AI Workflow Manager Template</div>
-            <h1 className="title">petpal_wellness_hub</h1>
-            <div className="description">
-              Start building your application.
-            </div>
-            <button className="btn btn-large">Button</button>
-          </div>
-        </div>
-      </main>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <FurEverCareNavbar />
+        <main style={{ paddingTop: 96 }}>
+          <Routes>
+            <Route path="/" element={<FurEverCareLanding />} />
+            {/* Future routes go here */}
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
