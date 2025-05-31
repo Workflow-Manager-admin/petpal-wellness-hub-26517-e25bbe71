@@ -131,19 +131,20 @@
   display: inline-block;
 }
 
-/* Nested Account submenu appearance & alignment */
+/* Nested Account submenu appearance & alignment (vertical dropdown below Account) */
 .furt-dropdown-nested {
   position: absolute;
-  top: 0;
-  left: 100%;
-  min-width: 160px;
+  left: 0;
+  top: 100%;
+  min-width: 180px;
   background: var(--kavia-dark, #242428);
   border-radius: 8px;
   box-shadow: 0 4px 12px 0 rgba(0,0,0,0.11);
   padding: 8px 0;
   display: none;
   z-index: 1030;
-  margin-left: 1px; /* Keeps it right aligned with Account */
+  margin-left: 0;
+  margin-top: 2px;
 }
 
 .furt-dropdown-submenu-parent:hover > .furt-dropdown-nested,
@@ -151,6 +152,11 @@
 .furt-dropdown-link.furt-dropdown-toggle:focus + .furt-dropdown-nested {
   display: flex;
   flex-direction: column;
+}
+
+/* Adjust arrow for vertical dropdown */
+.furt-dropdown-submenu-parent > .furt-dropdown-link.furt-dropdown-toggle .furt-dropdown-arrow {
+  transform: rotate(90deg);
 }
 
 /* Account button shows focus highlighting when nested menu open */
