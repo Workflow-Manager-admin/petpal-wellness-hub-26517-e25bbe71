@@ -2,8 +2,8 @@
 
 /* --- Gradient (primary) & glassmorphism fallback backgrounds --- */
 .furt-navbar {
-  /* Default: gradient. Replace with glassmorphism for option. */
-  background: linear-gradient(90deg, #a8e063 0%, #56ab2f 100%);
+  /* Pastel greenish-teal → soft purple gradient background */
+  background: linear-gradient(to right, #A7D7C5, #9FA8DA);
   /* Glassmorphism overlay if you wish:
   background: rgba(255,255,255,0.22);
   backdrop-filter: blur(14px) saturate(160%);
@@ -15,7 +15,7 @@
   left: 0;
   top: 0;
   border: none;
-  box-shadow: 0 4px 14px 0 rgba(25,40,10,0.13), 0 1.5px 14px 0 rgba(50,90,30,0.09);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background 0.3s;
   display: flex;
   align-items: center;
