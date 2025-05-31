@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import PetProfilePage from "./PetProfilePage";
 import HealthTrackerPage from "./HealthTrackerPage";
+import DietNutritionPage from "./DietNutritionPage";
 
 // PUBLIC_INTERFACE
 function App() {
@@ -19,6 +20,8 @@ function App() {
             <Route path="/pet/:id" element={<PetProfilePage />} />
             {/* Health Tracker with dynamic pet id */}
             <Route path="/pet/:id/health" element={<HealthTrackerPage />} />
+            {/* Diet & Nutrition Page (static route for demo) */}
+            <Route path="/diet-nutrition" element={<DietNutritionPage />} />
           </Routes>
         </main>
       </div>
