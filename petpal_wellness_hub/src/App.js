@@ -17,8 +17,8 @@ function App() {
           <Routes>
             <Route path="/" element={<FurEverCareLanding />} />
             <Route path="/pet/:id" element={<PetProfilePage />} />
-            {/* Future routes go here */}
-            <Route path="/health-tracker" element={<HealthTrackerPage />} />
+            {/* Health Tracker with dynamic pet id */}
+            <Route path="/pet/:id/health" element={<HealthTrackerPage />} />
           </Routes>
         </main>
       </div>
