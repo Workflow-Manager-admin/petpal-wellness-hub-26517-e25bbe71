@@ -112,25 +112,83 @@
 
 .furt-dropdown-submenu-parent {
   position: relative;
+  /* for submenu positioning */
 }
 
+/* Arrow indicator for nested dropdown */
+.furt-dropdown-submenu-parent > .furt-dropdown-link.furt-dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 6px;
+}
+.furt-dropdown-arrow {
+  font-size: 0.8em;
+  margin-left: 0.4em;
+  color: var(--text-secondary, #fff);
+  transition: transform 0.15s;
+  display: inline-block;
+}
+
+/* Nested Account submenu appearance & alignment */
 .furt-dropdown-nested {
-  top: 0;
-  left: 98%;
   position: absolute;
-  min-width: 140px;
+  top: 0;
+  left: 100%;
+  min-width: 160px;
   background: var(--kavia-dark, #242428);
   border-radius: 8px;
   box-shadow: 0 4px 12px 0 rgba(0,0,0,0.11);
   padding: 8px 0;
   display: none;
   z-index: 1030;
+  margin-left: 1px; /* Keeps it right aligned with Account */
 }
 
 .furt-dropdown-submenu-parent:hover > .furt-dropdown-nested,
-.furt-dropdown-submenu-parent:focus-within > .furt-dropdown-nested {
+.furt-dropdown-submenu-parent:focus-within > .furt-dropdown-nested,
+.furt-dropdown-link.furt-dropdown-toggle:focus + .furt-dropdown-nested {
   display: flex;
   flex-direction: column;
+}
+
+/* Account button shows focus highlighting when nested menu open */
+.furt-dropdown-submenu-parent:focus-within > .furt-dropdown-link.furt-dropdown-toggle,
+.furt-dropdown-submenu-parent > .furt-dropdown-link.furt-dropdown-toggle:focus {
+  background: var(--kavia-orange, #E87A41);
+  color: white;
+}
+
+/* For accessibility: keyboard navigation should maintain focus style for submenu items. */
+.furt-dropdown-nested .furt-dropdown-link:focus {
+  background: var(--kavia-orange, #E87A41);
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .furt-navbar-container {
+    max-width: 100vw;
+    padding: 0 10px;
+  }
+  .furt-nav-menu {
+    gap: 14px;
+  }
+  .furt-logo {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .furt-navbar-container,
+  .furt-nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+  .furt-navbar {
+    min-height: 56px;
+  }
 }
 
 @media (max-width: 800px) {
