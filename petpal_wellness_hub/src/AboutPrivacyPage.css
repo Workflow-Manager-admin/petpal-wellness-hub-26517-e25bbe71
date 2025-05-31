@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Lato:400,700|Open+Sans:400,700&display=swap');
+
+/* Root wrapper */
+.about-privacy-root {
+  position: relative;
+  min-height: 100vh;
+  background-color: #F9FDFD;
+  overflow-x: hidden;
+  font-family: 'Nunito', 'Lato', 'Open Sans', Arial, sans-serif;
+}
+
+.about-privacy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+
+/* Section titles */
+.about-title,
+.privacy-title {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #353755;
+  margin-bottom: 0.7em;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* Card wrappers */
+.about-cards-wrapper,
+.privacy-cards-wrapper {
+  display: grid;
+  grid-gap: 2rem;
+  margin-bottom: 2.7rem;
+}
+
+/* Desktop (two columns) */
+@media (min-width: 840px) {
+  .about-cards-wrapper,
+  .privacy-cards-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile/tablet (single column) */
+@media (max-width: 839px) {
+  .about-cards-wrapper,
+  .privacy-cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About Cards: Soft pastel, large, icon left, rounded, tactile, white drop shadow, paw bg */
+.about-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 2.2rem;
+  box-shadow: 0 8px 28px 0 rgba(78,141,124,0.10), 0 1.5px 4px 0 rgba(0,0,0,0.06);
+  padding: 2rem 2.2rem;
+  min-height: 150px;
+  transition: box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card:hover, .about-card:focus-within {
+  box-shadow: 0 12px 38px 0 rgba(242,107,107,0.10), 0 3px 12px 0 rgba(0,0,0,0.09);
+}
+
+.about-card .about-icon {
+  min-width: 44px;
+  min-height: 44px;
+  margin-top: 4px;
+}
+
+.about-card-heading {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.25em 0;
+  color: #4E8D7C;
+  letter-spacing: 0.01em;
+}
+
+.about-card-text {
+  font-size: 1.1rem;
+  color: #46484a;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.about-card.mission {
+  border: 2px solid #E9F7F6;
+  background: linear-gradient(97deg, #E9F7F6 70%, #fff 100%);
+}
+.about-card.offer {
+  border: 2px solid #F7C873;
+  background: linear-gradient(93deg, #F7F6EA 68%, #fff 100%);
+}
+.about-card.why {
+  border: 2px solid #F26B6B22;
+  background: linear-gradient(90deg, #FDF2F1 65%, #fff 100%);
+}
+.about-card.promise {
+  border: 2px solid #8AC1EF44;
+  background: linear-gradient(100deg, #F0F6FD 58%, #fff 100%);
+}
+
+/* Privacy Cards */
+.privacy-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 1.6rem;
+  box-shadow: 0 6px 18px rgba(33,56,55,0.07);
+  padding: 1.7rem 2rem;
+  min-height: 110px;
+  border: 1.8px solid #C3DED3;
+  position: relative;
+  overflow: hidden;
+}
+
+.privacy-card .privacy-icon {
+  min-width: 36px;
+  min-height: 36px;
+  margin-top: 6px;
+}
+
+.privacy-card-heading {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 1.11rem;
+  font-weight: 700;
+  color: #37575e;
+  margin: 0 0 0.25em 0;
+}
+
+.privacy-card-text {
+  font-size: 1rem;
+  color: #444c4e;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Privacy card outlines special */
+.privacy-card.data { border: 1.8px solid #8AC1EF44; }
+.privacy-card.usage { border: 1.8px solid #F7C873; }
+.privacy-card.protection { border: 1.8px solid #62BBA7; }
+.privacy-card.control { border: 1.8px solid #F26B6B44; }
+
+.privacy-download-btn-wrapper {
+  text-align: right;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+.privacy-download-btn {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(93deg, #8AC1EF 68%, #4E8D7C 114%);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.85em 1.7em;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  box-shadow: 0 2px 12px rgba(138,193,239,0.08);
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.12s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.privacy-download-btn:hover, .privacy-download-btn:focus {
+  background: linear-gradient(93deg, #4E8D7C 68%, #8AC1EF 114%);
+  box-shadow: 0 5px 18px rgba(72,140,123,0.13);
+  outline: none;
+  transform: translateY(-2px) scale(1.025);
+}
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  .about-privacy-container {
+    padding: 1.3rem 0.2rem 1.7rem 0.2rem;
+  }
+  .about-title,
+  .privacy-title {
+    font-size: 1.45rem;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+  }
+  .about-card,
+  .privacy-card {
+    padding: 1.15rem 1.2rem;
+  }
+  .privacy-download-btn {
+    font-size: 0.97rem;
+    padding: 0.7em 1.1em;
+  }
+  .privacy-download-btn-wrapper {
+    text-align: center;
+    margin-top: 1.6em;
+  }
+}
+
+/* Decorative faded paw prints/fur background pattern*/
+.about-privacy-bg-deco {
+  position: fixed;
+  left: 0; top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-image:
+    url('data:image/svg+xml;utf8,<svg width="120" height="120" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="60" rx="35" ry="34" fill="%23E9F7F6" fill-opacity="0.27"/><ellipse cx="45" cy="30" rx="11" ry="9.5" fill="%23F7C873" fill-opacity="0.13"/><ellipse cx="85" cy="38" rx="10" ry="8" fill="%234E8D7C" fill-opacity="0.09"/><ellipse cx="31" cy="86" rx="9" ry="11" fill="%23F26B6B" fill-opacity="0.09"/><ellipse cx="97" cy="94" rx="7" ry="9" fill="%23B29B61" fill-opacity="0.09"/></svg>');
+  background-size: 250px;
+  background-repeat: repeat;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Accessibility: Card hover/focus (for keyboard users) */
+.about-card:focus,
+.privacy-card:focus {
+  outline: 2px solid #4E8D7C;
+  outline-offset: 4px;
+}
+
+/* Ensure minimum touch target */
+.about-card,
+.privacy-card {
+  min-height: 95px;
+}
+
+.about-card,
+.privacy-card {
+  cursor: default;
+}
