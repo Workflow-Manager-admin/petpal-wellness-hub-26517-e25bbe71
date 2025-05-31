@@ -104,10 +104,12 @@ function FurEverCareNavbar() {
             </button>
             <ul className="furt-dropdown" role="menu" aria-label="My Pets Submenu">
               <li role="none">
-                <a className="furt-dropdown-link" href="#" role="menuitem" tabIndex={-1}>
+                {/* FIXME: Routing to the FIRST PET PROFILE for demo purposes.
+                  In a real app, would show a list or user's pets */}
+                <Link className="furt-dropdown-link" to="/pet/1" role="menuitem" tabIndex={-1}>
                   <span className="furt-icon"><i className="fa-solid fa-id-badge"></i></span>
-                  Pet Profiles
-                </a>
+                  Pet Profile
+                </Link>
               </li>
               <li role="none">
                 <a className="furt-dropdown-link" href="#" role="menuitem" tabIndex={-1}>
