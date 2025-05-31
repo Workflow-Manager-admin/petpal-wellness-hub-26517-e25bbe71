@@ -64,13 +64,13 @@ function FurEverCareNavbar() {
   return (
     <nav className="furt-navbar" role="navigation" aria-label="Main Navigation">
       <div className="furt-navbar-container">
-        <div className="furt-logo" tabIndex={0}>
+        <Link className="furt-logo" tabIndex={0} to="/" aria-label="FurEverCare home">
           <i className="fa-solid fa-shield-cat furt-logo-fa" aria-hidden="true"></i>
           <span role="img" aria-label="paw print" className="furt-logo-symbol">
             🐾
           </span>
           FurEverCare
-        </div>
+        </Link>
         <button
           className={`furt-hamburger${mobileOpen ? " active" : ""}`}
           aria-label="Open navigation"
