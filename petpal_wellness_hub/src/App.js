@@ -5,6 +5,7 @@ import FurEverCareLanding from './FurEverCareLanding';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import PetProfilePage from "./PetProfilePage";
+import HealthTrackerPage from "./HealthTrackerPage";
 
 // PUBLIC_INTERFACE
 function App() {
@@ -17,7 +18,7 @@ function App() {
             <Route path="/" element={<FurEverCareLanding />} />
             <Route path="/pet/:id" element={<PetProfilePage />} />
             {/* Future routes go here */}
-            <Route path="/health-tracker" element={<require("./HealthTrackerPage").default />} />
+            <Route path="/health-tracker" element={<HealthTrackerPage />} />
           </Routes>
         </main>
       </div>
