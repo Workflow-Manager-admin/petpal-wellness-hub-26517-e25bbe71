@@ -11,6 +11,7 @@ import ActivityPage from "./ActivityPage";
 import AppointmentManagePage from "./AppointmentManagePage";
 import ContactUsPage from "./ContactUsPage";
 import HelpPage from "./HelpPage";
+import AboutPrivacyPage from "./AboutPrivacyPage";
 
 // PUBLIC_INTERFACE
 // Wrapper to access pet id for DietNutritionPage via useParams
@@ -50,6 +51,8 @@ function App() {
             {/* Settings > Support: Help and Contact */}
             <Route path="/settings/support/contact" element={<ContactUsPage />} />
             <Route path="/settings/support/help" element={<HelpPage />} />
+            {/* Settings > About & Privacy */}
+            <Route path="/settings/about-privacy" element={<AboutPrivacyPage />} />
           </Routes>
         </main>
       </div>
