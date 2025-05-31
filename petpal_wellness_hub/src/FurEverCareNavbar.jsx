@@ -108,7 +108,7 @@ function FurEverCareNavbar() {
                   tabIndex={-1}
                 >
                   Account
-                  <span className="furt-dropdown-arrow" aria-hidden="true">▶</span>
+                  <span className="furt-dropdown-arrow" aria-hidden="true">▼</span>
                 </button>
                 <ul
                   className="furt-dropdown furt-dropdown-nested"
