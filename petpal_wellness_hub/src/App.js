@@ -17,6 +17,7 @@ function App() {
             <Route path="/" element={<FurEverCareLanding />} />
             <Route path="/pet/:id" element={<PetProfilePage />} />
             {/* Future routes go here */}
+            <Route path="/health-tracker" element={<require("./HealthTrackerPage").default />} />
           </Routes>
         </main>
       </div>
