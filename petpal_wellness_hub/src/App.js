@@ -8,6 +8,7 @@ import PetProfilePage from "./PetProfilePage";
 import HealthTrackerPage from "./HealthTrackerPage";
 import DietNutritionPage from "./DietNutritionPage";
 import ActivityPage from "./ActivityPage";
+import AppointmentManagePage from "./AppointmentManagePage";
 
 // PUBLIC_INTERFACE
 // Wrapper to access pet id for DietNutritionPage via useParams
