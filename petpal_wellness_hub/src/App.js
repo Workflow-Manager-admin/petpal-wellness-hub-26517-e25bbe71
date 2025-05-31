@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import PetProfilePage from "./PetProfilePage";
 import HealthTrackerPage from "./HealthTrackerPage";
 import DietNutritionPage from "./DietNutritionPage";
+import ActivityPage from "./ActivityPage";
 
 // PUBLIC_INTERFACE
 // Wrapper to access pet id for DietNutritionPage via useParams
@@ -15,6 +16,13 @@ function DietNutritionPageWithParams() {
   const { id } = useParams();
   // Optionally pass id as prop when/if DietNutritionPage supports it
   return <DietNutritionPage petId={id} />;
+}
+
+// PUBLIC_INTERFACE
+// Wrapper for ActivityPage with dynamic :id param, in case future enhancement needed
+function ActivityPageWithParams() {
+  // For now, no prop required but allows easy extension
+  return <ActivityPage />;
 }
 
 // PUBLIC_INTERFACE
