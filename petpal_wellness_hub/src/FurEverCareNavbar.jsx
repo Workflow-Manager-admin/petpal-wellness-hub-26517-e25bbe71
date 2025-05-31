@@ -151,6 +151,28 @@ function FurEverCareNavbar() {
               </span>
               Contact Us
             </Link>
+            {/* Account nested dropdown */}
+            <div
+              className="navbar__dropdown-link navbar__dropdown-link--account"
+              tabIndex={dropdown === 'settings' ? 0 : -1}
+              aria-haspopup="true"
+            >
+              <span className="navbar__dropdown-icon" aria-hidden="true">
+                <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+                  <ellipse cx="10" cy="8" rx="4" ry="4" />
+                  <rect x="5.5" y="12" width="9" height="5" rx="2.5" fill="#e8f5fa"/>
+                </svg>
+              </span>
+              Account
+              <div className="navbar__nested-dropdown">
+                <Link to="/login" className="navbar__nested-dropdown-link" tabIndex={dropdown === 'settings' ? 0 : -1}>
+                  Login
+                </Link>
+                <Link to="/signup" className="navbar__nested-dropdown-link" tabIndex={dropdown === 'settings' ? 0 : -1}>
+                  Signup
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
