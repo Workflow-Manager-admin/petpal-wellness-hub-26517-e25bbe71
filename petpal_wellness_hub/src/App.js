@@ -46,6 +46,10 @@ function App() {
             <Route path="/pet/:id/activity" element={<ActivityPageWithParams />} />
             {/* Appointment Manage Page */}
             <Route path="/appointments/manage" element={<AppointmentManagePage />} />
+
+            {/* Settings > Support: Help and Contact */}
+            <Route path="/settings/support/contact" element={<ContactUsPage />} />
+            <Route path="/settings/support/help" element={<HelpPage />} />
           </Routes>
         </main>
       </div>
