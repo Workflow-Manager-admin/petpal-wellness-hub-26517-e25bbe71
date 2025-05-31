@@ -194,8 +194,10 @@
   color: #49a447;
 }
 
+/* Show nested submenu to the LEFT of the parent dropdown */
 .furt-dropdown-nested {
-  left: 100%;
+  right: 100%;
+  left: auto;
   top: 4px;
   min-width: 186px;
   background: rgba(255,255,255,0.97);
@@ -207,8 +209,19 @@
   z-index: 1160;
   opacity: 0;
   pointer-events: none;
-  transform: translateX(8px) scale(.965);
+  transform: translateX(-8px) scale(.965);
   transition: opacity 0.23s, transform 0.17s;
+}
+
+@media (max-width: 900px) {
+  .furt-dropdown-nested {
+    left: 0 !important;
+    right: auto !important;
+    top: 100%;
+    min-width: 186px;
+    transform: none;
+    box-shadow: 0 7px 20px 0 rgba(60,120,80,0.09), 0 1px 2px #a0ffcc1c;
+  }
 }
 .furt-dropdown-submenu-parent:hover > .furt-dropdown-nested,
 .furt-dropdown-submenu-parent:focus-within > .furt-dropdown-nested {
