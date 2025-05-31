@@ -259,10 +259,18 @@ function FurEverCareNavbar() {
                 </ul>
               </li>
               <li role="none">
-                <a className="furt-dropdown-link" href="#" role="menuitem" tabIndex={-1}>
-                  <span className="furt-icon"><i className="fa-solid fa-info-circle"></i></span>
+                <Link
+                  className="furt-dropdown-link"
+                  to="/settings/about-privacy"
+                  role="menuitem"
+                  tabIndex={-1}
+                >
+                  <span className="furt-icon">
+                    {/* Using FontAwesome soft/info (fa-circle-info) icon */}
+                    <i className="fa-solid fa-circle-info"></i>
+                  </span>
                   About &amp; Privacy
-                </a>
+                </Link>
               </li>
             </ul>
           </li>
