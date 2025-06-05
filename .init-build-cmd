@@ -1,0 +1,4 @@
+{
+    "command": "npm install && npx tsc --noEmit && npm test -- --ci",
+    "working_directory": "/home/kavia/workspace/code-generation/petpal-wellness-hub-26517-e25bbe71/pet_wellness_hub"
+}
