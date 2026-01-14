@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Nunito:wght@400;700&display=swap');
+
+/* Root & layout */
+.about-privacy-root {
+  font-family: 'Poppins', 'Nunito', Arial, sans-serif;
+  background: linear-gradient(110deg, #fff6eb 0%, #f7c873 100%);
+  min-height: 100vh;
+  padding: 3.5rem 0 3rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 2.75rem;
+}
+
+/* Card-shape, pastel background, soft shadow*/
+.about-card,
+.privacy-card {
+  position: relative;
+  background: #fffefc;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 20px 0 rgba(78, 141, 124, 0.06);
+  max-width: 670px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 2.25rem 2.25rem 1.5rem 2.25rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.about-card {
+  border: 1.8px solid #f7c87355;
+}
+
+.privacy-card {
+  border: 1.8px solid #4e8d7c33;
+  margin-top: 0.3rem;
+}
+
+.about-card .about-content,
+.privacy-card .privacy-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Icons and faded background textures */
+.about-icon-bg,
+.privacy-icon-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  overflow: visible;
+}
+.about-icon-bg .faded-paw {
+  position: absolute;
+  left: -20px;
+  top: 10px;
+  width: 115px;
+  height: 110px;
+}
+.privacy-icon-bg .fur-texture {
+  position: absolute;
+  right: -5px;
+  bottom: -12px;
+  width: 85px;
+  height: 80px;
+}
+
+/* Public main icon styles */
+.about-icon, .privacy-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(125deg, #f7c87333 0%, #4e8d7c22 100%);
+  border-radius: 20px;
+  padding: 0.8rem;
+  margin-bottom: 0.4rem;
+  margin-top: 0.15rem;
+  box-shadow: 0 1px 10px 0 #f7c87315;
+}
+.about-icon {
+  border: 1.5px solid #f7c87352;
+}
+.privacy-icon {
+  border: 1.5px solid #4e8d7c30;
+}
+
+/* SVG icon color tweaks */
+.svg-icon-pet,
+.svg-icon-shield {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Typography */
+.about-title {
+  font-family: 'Poppins', 'Nunito', Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #4e8d7c;
+  margin-top: 0.25em;
+  margin-bottom: 0.65em;
+  letter-spacing: 0.02em;
+}
+.privacy-title {
+  font-family: 'Nunito', 'Poppins', Arial, sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #f26b6b;
+  margin-top: 0.18em;
+  margin-bottom: 0.53em;
+  letter-spacing: 0.01em;
+}
+.about-description,
+.privacy-description {
+  color: #594734;
+  font-family: 'Nunito', Arial, sans-serif;
+  font-size: 1.13rem;
+  font-weight: 400;
+  line-height: 1.75;
+  margin-bottom: 0.2em;
+}
+.about-description ul,
+.privacy-description ul {
+  margin: 0.7em 0 0.8em 1.25em;
+  padding-left: 1.05em;
+  font-size: 1em;
+  color: #18301d;
+}
+.about-description li,
+.privacy-description li {
+  margin-bottom: 0.3em;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .about-card,
+  .privacy-card {
+    padding: 1.15rem 0.6rem 1.2rem 0.6rem;
+    min-width: 0;
+    font-size: 0.96rem;
+  }
+  .about-title,
+  .privacy-title {
+    font-size: 1.13rem;
+  }
+}
+@media (max-width: 400px) {
+  .about-privacy-root {
+    padding: 1.2rem 0.3rem 1.2rem 0.3rem;
+    gap: 1.15rem;
+    font-size: 0.88rem;
+  }
+}
+
+/* Section separation */
+.about-card {
+  margin-bottom: 2rem;
+  border-bottom-left-radius: 2.3rem;
+}
+.privacy-card {
+  margin-top: 0.4rem;
+  border-top-right-radius: 2.3rem;
+  border-top: 4.5px dashed #f26b6b30;
+}
+
+/* Gradient Button Style */
+.gradient-btn {
+  display: inline-block;
+  padding: 0.8em 1.75em;
+  margin-top: 1.1em;
+  background: linear-gradient(92deg, #4e8d7c 0%, #f7c873 71%, #f26b6b 100%);
+  color: #fffefc;
+  font-family: 'Poppins', 'Nunito', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 2.5em;
+  box-shadow: 0 2px 10px 0 #f7c87318;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: filter 0.13s, box-shadow 0.13s, outline 0.16s;
+  outline: none;
+}
+.gradient-btn:focus,
+.gradient-btn:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 4px 16px 0 #f26b6b33;
+  outline: 3px dotted #594734;
+  outline-offset: 2px;
+}
+
+.gradient-btn:active {
+  filter: brightness(0.95);
+}
+
+.gradient-btn:visited {
+  color: #fffefc;
+}
+
+/* Accessibility - link high contrast for keyboard users */
+.gradient-btn:focus-visible {
+  outline: 3px solid #4e8d7c;
+  outline-offset: 2px;
+}

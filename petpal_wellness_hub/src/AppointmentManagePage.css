@@ -1,0 +1,468 @@
+:root {
+  --amp-gradient: linear-gradient(90deg, #E87A41 0%, #F7C873 87%, #6ABBA7 100%);
+  --soft-card-bg: rgba(255,255,255,0.82);
+  --soft-card-shadow: 0 2px 20px 0 rgba(33,43,54,0.07), 0 1.5px 4px 0 rgba(33,43,54,0.12);
+  --pastel-blue: #b8e6fc;
+  --pastel-yellow: #fde6ac;
+  --pastel-green: #bcffd8;
+  --pastel-red: #ffcbc4;
+  --pastel-purple: #ddccfb;
+  --border: #f1eada;
+  --btn-hover: #e37b15;
+}
+
+/* Base structure */
+.amp-root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.amp-section-header {
+  padding: 2rem 1rem 1rem 1rem;
+  background: var(--amp-gradient);
+  border-radius: 1.5rem;
+  box-shadow: var(--soft-card-shadow);
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1A1A1A;
+}
+
+.amp-title {
+  font-size: 2.1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85em;
+  margin-bottom: 0.5rem;
+}
+
+.amp-description {
+  font-size: 1.1rem;
+  color: #444340;
+  margin-bottom: 0.9em;
+}
+
+.amp-section {
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.amp-btn,
+.amp-btn-gradient {
+  background: var(--amp-gradient);
+  border: none;
+  border-radius: 24px;
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.55em 1.3em;
+  box-shadow: 0 2px 14px 0 rgba(232, 122, 65, 0.09);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+.amp-btn:hover,
+.amp-btn-gradient:hover {
+  background: var(--btn-hover);
+  color: #fff;
+}
+.amp-btn-link {
+  background: none;
+  border: none;
+  color: #E87A41;
+  cursor: pointer;
+  padding: 0.2em 0.3em;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+.amp-btn-link:hover, .amp-btn-link:focus {
+  color: #F26B6B;
+  background: rgba(232, 122, 65, 0.08);
+}
+
+.amp-section-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #2d3e53;
+  margin-bottom: 0.8em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.amp-section-addon {
+  color: #999;
+  font-size: 0.89em;
+  margin-left: 0.6em;
+  font-weight: 400;
+}
+
+/* Cards */
+.amp-soft-card {
+  background: var(--soft-card-bg);
+  border-radius: 1.25rem;
+  box-shadow: var(--soft-card-shadow);
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+  transition: box-shadow 0.2s;
+  border: 1px solid var(--border);
+}
+.amp-soft-card:hover,
+.amp-soft-card:focus-within {
+  box-shadow: 0 3px 28px 5px rgba(178,164,255,0.09),
+              0 1.5px 7px 1px rgba(33,43,54,0.14);
+  border-color: #E87A41;
+}
+.amp-cards-row {
+  display: flex;
+  gap: 1.5em;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.amp-appointment-card {
+  min-width: 250px;
+  flex: 1 1 280px;
+  max-width: 370px;
+}
+
+.amp-apt-row-main {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 0.27em;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8em;
+}
+.amp-apt-info {
+  font-size: 0.96em;
+  color: #5d71a3;
+  margin-bottom: 0.25em;
+  display: flex;
+  gap: 1.2em;
+}
+.amp-status-badge {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 0.18em 0.65em;
+  font-size: 0.93em;
+  font-weight: 600;
+  margin: 0.25em 0;
+}
+
+.amp-status-upcoming { background: #bcffd8; color: #276554;}
+.amp-status-completed { background: #ddccfb; color: #563986;}
+.amp-status-missed { background: #ffcbc4; color: #d84343;}
+
+/* Appointment history */
+.amp-history-controls {
+  margin-bottom: 0.6em;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.4em;
+}
+.amp-history-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25em;
+}
+.amp-history-card {
+  flex: 1 1 220px;
+  max-width: 300px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+}
+.amp-history-date {
+  font-size: 1em;
+  color: #496;
+}
+.amp-history-type {
+  margin-right: 1em;
+  font-weight: 600;
+}
+.amp-history-details {
+  color: #4e8d7c;
+  font-size: 0.97em;
+  margin-top: 0.15em;
+}
+
+/* Calendar (UPDATED COLOR SCHEME FOR DISTINCTIVENESS) */
+.amp-section-calendar {
+  margin-top: 1.2em;
+}
+
+.amp-calendar-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin-bottom: 0.4em;
+}
+
+.amp-calendar-toggles, .amp-calendar-filters {
+  display: flex;
+  gap: 0.6em;
+}
+.amp-calendar-toggle {
+  border: none;
+  background: #e8e4ff;
+  border-radius: 18px;
+  font-size: 1em;
+  color: #494373;
+  font-weight: 600;
+  padding: 0.38em 1.1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.amp-calendar-toggle.active,
+.amp-calendar-toggle:focus {
+  background: var(--amp-gradient);
+  color: #222;
+}
+
+.amp-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  background: #f4faff; /* subtle fresh tint */
+  border-radius: 1.2rem;
+  padding: 1.1em 0.4em;
+  margin-bottom: 0.66em;
+  border: 2px solid #A5CAF7;
+}
+
+.amp-calendar-cell {
+  min-height: 70px;
+  background: linear-gradient(120deg, #EAEDF6 60%, #C8E6F0 100%);
+  border-radius: 1em;
+  padding: 0.33em 0.2em 0.6em 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  outline: none;
+  transition: box-shadow 0.12s, border 0.15s;
+  border: 2px solid #DCD6F7;
+}
+.amp-calendar-cell:focus {
+  box-shadow: 0 0 0 3px #C8E6F0;
+  z-index: 2;
+}
+.amp-calendar-cell:hover {
+  background: #e7f2ff;
+  border: 2px solid #b2cdf7;
+}
+
+.amp-calendar-daynum {
+  font-size: 1.23em;
+  font-weight: bold;
+  color: #4E8D7C;
+}
+
+.amp-calendar-dotrow {
+  margin-top: 0.21em;
+  display: flex;
+  gap: 3px;
+}
+.amp-calendar-dot {
+  width: 8.5px;
+  height: 8.5px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.amp-calendar-legend {
+  display: flex;
+  gap: 1.7em;
+  font-size: 1em;
+  margin-top: -0.3em;
+  margin-bottom: 0.2em;
+}
+.amp-legend-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+/* Calendar selected day pill: fresh new accent */
+.amp-calendar-cell.selected,
+.selected-day,  /* for generic fallback */
+.amp-calendar-selected {
+  background: linear-gradient(90deg, #8AC6D1 30%, #DCD6F7 100%);
+  color: #222 !important;
+  border-radius: 999px;
+  box-shadow: 0 1px 8px 0 rgba(32, 36, 52, 0.13);
+  border: 2px solid #6fa6ed;
+}
+
+.amp-calendar-cell.selected .amp-calendar-daynum, .selected-day .amp-calendar-daynum {
+  color: #252855;
+}
+
+/* Pastel icons */
+.amp-pastel-icon {
+  width: 2.1em;
+  height: 2.1em;
+  border-radius: 50%;
+  background: var(--pastel-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.11em;
+  margin-right: 0.6em;
+  box-shadow: 0 1.5px 9px 0 rgba(33,43,54,0.05);
+  color: #2b3968;
+}
+.amp-pastel-icon i {
+  font-size: 1.1em;
+}
+
+/* Booking modal */
+.amp-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(51,41,69,0.13);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.amp-modal {
+  background: var(--soft-card-bg);
+  border-radius: 1.2rem;
+  box-shadow: var(--soft-card-shadow);
+  padding: 2em 1.7em;
+  min-width: 310px;
+  max-width: 98vw;
+  min-height: 210px;
+  position: relative;
+}
+.amp-booking-form label {
+  display: block;
+  margin-top: 0.8em;
+  margin-bottom: 0.23em;
+}
+.amp-booking-form select,
+.amp-booking-form input[type="date"],
+.amp-booking-form input[type="time"],
+.amp-booking-form textarea {
+  width: 100%;
+  font-size: 1em;
+  padding: 0.3em 0.8em;
+  border-radius: 8px;
+  border: 1px solid #efe7e7;
+  margin-bottom: 0.15em;
+}
+.amp-booking-form textarea { resize: vertical; }
+.amp-booking-form .amp-booking-nav {
+  display: flex;
+  gap: 1em;
+  margin-top: 0.87em;
+}
+.amp-modal-close {
+  position: absolute;
+  top: 8px; right: 13px;
+  font-size: 1.5em;
+}
+.amp-form-msg {
+  color: #d84343;
+  font-size: 1em;
+  margin-top: 0.43em;
+}
+
+/* Reminders & Uploads */
+.amp-section-right {
+  display: flex;
+  gap: 2.5em;
+  flex-wrap: wrap;
+}
+.amp-card-group {
+  display: flex;
+  gap: 2em;
+}
+.amp-reminder-card, .amp-upload-card {
+  flex: 1 1 250px;
+  max-width: 340px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.amp-reminder-toggle {
+  margin: 1em 0 0.8em 0;
+  display: flex;
+  gap: 1.7em;
+}
+.amp-reminder-toggle label {
+  font-size: 1.05em;
+  color: #593A2A;
+}
+.amp-text-small { font-size: 0.93em; }
+.amp-reminder-note { color: #98753d; }
+.amp-upload-input {
+  border: none;
+  background: none;
+  font-size: 1em;
+  margin: 0.9em 0 0.4em 0;
+}
+.amp-upload-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 98%;
+}
+.amp-upload-item {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  border-bottom: 1px solid #f5e3cd;
+  padding: 0.3em 0;
+  font-size: 1em;
+}
+.amp-upload-name { font-weight: 500; }
+.amp-upload-date { font-size: 0.9em; color: #998; }
+
+/* Accessibility/screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 0.01em;
+  height: 0.01em;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+  .amp-cards-row, .amp-history-list, .amp-section-right, .amp-card-group {
+    flex-direction: column;
+    gap: 1em;
+  }
+  .amp-calendar-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+}
+@media (max-width: 650px) {
+  .amp-section-header, .amp-section {
+    padding: 0.5rem;
+  }
+  .amp-soft-card, .amp-modal {
+    padding: 0.7em 0.3em;
+  }
+  .amp-root {
+    padding: 5px;
+  }
+  .amp-title {
+    font-size: 1.17rem;
+  }
+}
